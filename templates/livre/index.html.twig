@@ -21,11 +21,11 @@
         <tbody>
         {% for livre in livres %}
             <tr>
-                <td>{{ livre.id }}</td>
+                <td>n°{{ livre.id }}</td>
                 <td>{{ livre.titre }}</td>
-                <td>{{ livre.couverture }}</td>
+                <td><img src="{{ livre.couverture }}" alt="Couverture du livre" style="max-width: 50px;"></td>
                 <td>{{ livre.auteur }}</td>
-                <td>{{ livre.prix }}</td>
+                <td>{{ livre.prix }} €</td>
                 <td>{{ livre.genre }}</td>
                 <td>{{ livre.resume | slice(0,20)}}...</td>
                 <td>
