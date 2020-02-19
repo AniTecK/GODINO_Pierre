@@ -38,6 +38,7 @@ class LivresController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($livre);
             $entityManager->flush();
+            $this->addFlash('success', 'Le livre a été ajouté avec succès');
 
             return $this->redirectToRoute('livre_index');
         }
@@ -68,6 +69,7 @@ class LivresController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
+            $this->addFlash('success', 'Le livre a été modifié avec succès');
 
             return $this->redirectToRoute('livre_index');
         }
@@ -87,6 +89,7 @@ class LivresController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($livre);
             $entityManager->flush();
+            $this->addFlash('danger', 'Le livre a été supprimé avec succès');
         }
 
         return $this->redirectToRoute('livre_index');
