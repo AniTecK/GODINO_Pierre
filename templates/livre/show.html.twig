@@ -4,45 +4,47 @@
 
 {% block body %}
     <div class="container m-auto">
-        <h1>Livre</h1>
+        <div class="container m-auto">
+            <h1>Livre</h1>
 
-        <table class="table">
-            <tbody>
-                <tr>
-                    <th>Id</th>
-                    <td>{{ livre.id }}</td>
-                </tr>
-                <tr>
-                    <th>Titre</th>
-                    <td>{{ livre.titre }}</td>
-                </tr>
-                <tr>
-                    <th>Couverture</th>
-                    <td>{{ livre.couverture }}</td>
-                </tr>
-                <tr>
-                    <th>Auteur</th>
-                    <td>{{ livre.auteur }}</td>
-                </tr>
-                <tr>
-                    <th>Prix</th>
-                    <td>{{ livre.prix }}</td>
-                </tr>
-                <tr>
-                    <th>Genre</th>
-                    <td>{{ livre.genre }}</td>
-                </tr>
-                <tr>
-                    <th>Résumé</th>
-                    <td>{{ livre.resume }}</td>
-                </tr>
-            </tbody>
-        </table>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th>Id</th>
+                        <td>{{ livre.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>Titre</th>
+                        <td>{{ livre.titre }}</td>
+                    </tr>
+                    <tr>
+                        <th>Couverture</th>
+                        <td>{{ livre.couverture }}</td>
+                    </tr>
+                    <tr>
+                        <th>Auteur</th>
+                        <td>{{ livre.auteur }}</td>
+                    </tr>
+                    <tr>
+                        <th>Prix</th>
+                        <td>{{ livre.prix }}</td>
+                    </tr>
+                    <tr>
+                        <th>Genre</th>
+                        <td>{{ livre.genre }}</td>
+                    </tr>
+                    <tr>
+                        <th>Résumé</th>
+                        <td>{{ livre.resume }}</td>
+                    </tr>
+                </tbody>
+            </table>
 
-        <a href="{{ path('livre_index') }}" class="btn btn-info">Retourner à la liste</a>
+            <a href="{{ path('livre_index') }}" class="btn btn-info mb-2">Retourner à la liste</a>
 
-        <a href="{{ path('livre_edit', {'id': livre.id}) }}" class="btn btn-success">Modifier</a>
+            <a href="{{ path('livre_edit', {'id': livre.id}) }}" class="btn btn-success mb-2">Modifier</a>
 
-        {{ include('livre/_delete_form.html.twig') }}
+            {{ include('livre/_delete_form.html.twig') }}
+        </div>
     </div>
 {% endblock %}
