@@ -43,6 +43,7 @@ class Livre
      * minMessage="minimum 0.01€",
      * maxMessage="minimum 5000"
      * )
+     * @Assert\Length(min=1, minMessage="Ce champ ne doit pas être vide")
      */
     private $prix;
 

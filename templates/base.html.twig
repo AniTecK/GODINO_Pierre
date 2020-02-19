@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('/apple-touch-icon.png') }}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('/favicon-32x32.png')}}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/favicon-16x16.png')}}">
+        <link rel="manifest" href="{{ asset('/site.webmanifest')}}">
+
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Livres d'auteurs{% endblock %}</title>
         {% block stylesheets %}
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
             integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -11,6 +16,7 @@
         {% endblock %}
     </head>
     <body>
+        
         {% include "navigation.html.twig" %}
         {% block body %}
         
