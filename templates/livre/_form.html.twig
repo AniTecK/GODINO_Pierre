@@ -1,6 +1,4 @@
-<div class="container m-auto">
-    {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Sauvegarder') }}</button>
-    {{ form_end(form) }}
-</div>
+{{ form_start(form) }}
+{{ form_widget(form) }}
+<button class="btn btn-success">{{ button_label|default('Sauvegarder') }}</button>
+{{ form_end(form) }}

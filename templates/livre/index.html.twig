@@ -3,7 +3,7 @@
 {% block title %}Livre index{% endblock %}
 
 {% block body %}
-    <h1>Livre index</h1>
+    <h1>Liste des livres</h1>
 
     <table class="table">
         <thead>
@@ -27,19 +27,31 @@
                 <td>{{ livre.auteur }}</td>
                 <td>{{ livre.prix }}</td>
                 <td>{{ livre.genre }}</td>
-                <td>{{ livre.resume }}</td>
+                <td>{{ livre.resume | slice(0,20)}}...</td>
                 <td>
-                    <a href="{{ path('livre_show', {'id': livre.id}) }}">show</a>
-                    <a href="{{ path('livre_edit', {'id': livre.id}) }}">edit</a>
+                    <a href="{{ path('livre_show', {'id': livre.id}) }}" class="btn btn-info">Detail</a>
+                    <a href="{{ path('livre_edit', {'id': livre.id}) }}" class="btn btn-success">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="8">no records found</td>
+                <td colspan="8">Aucuns livres trouvé !</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('livre_new') }}">Create new</a>
+    <a href="{{ path('livre_new') }}" class="btn btn-success">Ajouter un livre</a>
+
+    <hr>
+    {% for message in app.flashes('success') %}
+    <div class="alert alert-success">
+        {{ message }}
+    </div>
+    {% endfor %}
+    {% for message in app.flashes('danger') %}
+    <div class="alert alert-danger">
+        {{ message }}
+    </div>
+    {% endfor %}
 {% endblock %}
