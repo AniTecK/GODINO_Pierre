@@ -20,6 +20,7 @@ class LivresController extends AbstractController
      */
     public function index(LivreRepository $livreRepository): Response
     {
+        $this->addFlash('info', 'Des Fixtures sont à disposition -> php bin/console doctrine:fixtures:load <-)');
         return $this->render('livre/index.html.twig', [
             'livres' => $livreRepository->findAll(),
         ]);
