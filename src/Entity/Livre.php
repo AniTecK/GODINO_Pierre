@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\LivreRepository")
@@ -18,31 +19,43 @@ class Livre
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(min=3, minMessage="Minimum 3 caractères")
      */
     private $titre;
 
     /**
      * @ORM\Column(type="string", length=300)
+     * @Assert\Url(message="L'URL est invalide")
      */
     private $couverture;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(min=3, minMessage="Minimum 3 caractères")
      */
     private $auteur;
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\Range(
+     * min=0.01,
+     * max=5000,
+     * minMessage="minimum 0.01€",
+     * maxMessage="minimum 5000"
+     * )
      */
     private $prix;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(min=2, minMessage="Minimum 2 caractères")
+     * 
      */
     private $genre;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\Length(min=100, minMessage="Minimum 100 caractères")
      */
     private $resume;
 
